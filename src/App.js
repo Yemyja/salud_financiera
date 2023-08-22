@@ -7,7 +7,7 @@ import SaludFinanciera from "./components/SaludFinanciera";
 import "bootstrap/dist/css/bootstrap.min.css"; // Importa el CSS de Bootstrap
 import "./App.css";
 import Articulo1 from "./components/Articulo1"; 
-import { Switch, Route } from "react-router-dom";
+
 
 function App() {
   const [currentPage, setCurrentPage] = useState("home");
@@ -15,33 +15,25 @@ function App() {
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
-  // const renderPage = () => {
-  //   switch (currentPage) {
-  //     case "home":
-  //       return <Home />;
-  //     case "blog":
-  //       return <Blog />;
-  //     case "presupuesto":
-  //       return <Presupuesto />;
-  //     case "saludfinanciera":
-  //       return <SaludFinanciera />;
-  //       case "contacto":
-  //         return <Contacto />;
+  const renderPage = () => {
+    switch (currentPage) {
+      case "home":
+        return <Home />;
+      case "blog":
+        return <Blog />;
+      case "presupuesto":
+        return <Presupuesto />;
+      case "saludfinanciera":
+        return <SaludFinanciera />;
+        case "contacto":
+          return <Contacto />;
 
-  //         case "articulo1":
-  //           return<Articulo1 />
-  //     default:
-  //       return <Home />;
-  //   }
-  // };
-  <Switch>
-  <Route path="/presupuesto" component={Presupuesto} />
-  <Route path="/saludfinanciera" component={SaludFinanciera} />
-  <Route path="/contacto" component={Contacto} />
-  <Route path="/blog" component={Blog} />
-  <Route path="/articulo1" component={Articulo1} />
-  <Route exact path="/" component={Home} />
-</Switch>
+          case "articulo1":
+            return<Articulo1 />
+      default:
+        return <Home />;
+    }
+  };
 
   return (
     <div>
