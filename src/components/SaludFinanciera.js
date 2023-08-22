@@ -1,8 +1,10 @@
 
 
 
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from "react";
+import "./SaludFinanciera.css"; 
+import "bootstrap/dist/css/bootstrap.min.css"; 
+// import React, { useState } from 'react';
 // import Home from './pages/Home';
 // import Examen from './pages/Examen'; 
 // import Contact from './pages/Contact';
@@ -12,7 +14,7 @@ import React, { useState } from 'react';
 
 const useMaxExpensePercentage = () => {
   const [maxExpensePercentage, setMaxExpensePercentage] = useState({
-    alimentacion: 30,
+    alimentacion: 15,
     vivienda: 35,
     transporte: 15,
     entretenimiento: 10,
@@ -59,9 +61,17 @@ const App = () => {
   const [showExpenseTable, setShowExpenseTable] = useState(false);
   // const [showExpensePercentage, setShowExpensePercentage] = useState(false);
   const [expenseDate, setExpenseDate] = useState(''); // Nuevo estado para fecha de gastos
+  
   const { maxExpensePercentage, getMaxExpensePercentageByCategory, updateMaxExpensePercentage } =
     useMaxExpensePercentage();
 
+    useEffect(() => {
+      // Configurar la fecha actual como valor inicial para la fecha de gastos
+      const currentDate = new Date();
+      const formattedDate = currentDate.toISOString().substr(0, 10);
+      setExpenseDate(formattedDate);
+    }, []); // El segundo argumento vacío hace que este efecto se ejecute solo una vez al montar el componente
+  
 
   const deleteExpense = (index) => {
     const updatedExpenses = [...expenses];
@@ -188,10 +198,11 @@ const deleteIncome = (index) => {
   
 return (
     <div>
+
     <div className="container mt-4">
-    
+    <h1 className="text-center">Verificar Salud Financiera</h1>
        <div className="container mt-4">
-         <h1 className="text-center">Verificar Salud Financiera</h1>
+         
          <div className="mb-3">
           <h2>Estado de cuenta</h2>
           <table className="table">
@@ -203,6 +214,8 @@ return (
               </tr>
             </thead>
             </table> </div>
+</div>
+            <div className="container mt-4">
          <div className="mb-3">
            <h2>Ingresos</h2>
            <form
@@ -246,7 +259,7 @@ return (
               </div>
             </div>
           </form>
-        </div>
+       
         <div className="mb-3">
       <div className="mb-3">
         <h2>Resumen de ingresos</h2>
@@ -348,7 +361,7 @@ return (
                   placeholder="Fecha del gasto"
                 />
               </div>
-              <div className="col-sm-4">
+              <div className="col-sm-3">
                 <button type="submit" className="btn btn-primary">
                   Agregar gasto
                 </button>
@@ -356,7 +369,7 @@ return (
             </div>
           </form>
         </div>
-
+        
   <div className="mb-3">
           <h2>Resumen de gastos</h2>
           <div className="mb-3">
@@ -398,6 +411,7 @@ return (
             {showExpenseTable ? 'Ocultar Resumen de gastos' : 'Mostrar Resumen de gastos'}
           </button>
         </div>
+        </div>
 
         
         <div className="mb-3">
@@ -407,7 +421,7 @@ return (
               <tr>
                 <th>Categoría</th>
                 <th>Gasto total</th>
-                <th>Porcentaje del ingreso</th>
+                <th>Porcentaje gastado</th>
                 <th>Porcentaje recomendado</th>
               </tr>
             </thead>
@@ -416,100 +430,131 @@ return (
                 <td>Alimentación</td>
                 <td>${calculateTotalExpenseByCategory('alimentacion')}</td>
                 <td>{calculateTotalExpensePercentageByCategory('alimentacion')}%</td>
-                <td>
-    {getMaxExpensePercentageByCategory('alimentacion')}%
-       </td>
+                <td>{getMaxExpensePercentageByCategory('alimentacion')}%</td>
               </tr>
               <tr className={isExceededCategory('vivienda') ? 'table-danger' : ''}>
                 <td>Vivienda</td>
                 <td>${calculateTotalExpenseByCategory('vivienda')}</td>
                 <td>{calculateTotalExpensePercentageByCategory('vivienda')}%</td>
+                <td>{getMaxExpensePercentageByCategory('vivienda')}%</td>
+
               </tr>
               <tr className={isExceededCategory('transporte') ? 'table-danger' : ''}>
   <td>Transporte</td>
   <td>${calculateTotalExpenseByCategory('transporte')}</td>
   <td>{calculateTotalExpensePercentageByCategory('transporte')}%</td>
+  <td>{getMaxExpensePercentageByCategory('transporte')}%</td>
+
 </tr>
 <tr className={isExceededCategory('entretenimiento') ? 'table-danger' : ''}>
   <td>Entretenimiento</td>
   <td>${calculateTotalExpenseByCategory('entretenimiento')}</td>
   <td>{calculateTotalExpensePercentageByCategory('entretenimiento')}%</td>
+  <td>{getMaxExpensePercentageByCategory('entretenimiento')}%</td>
+
 </tr>
 <tr className={isExceededCategory('viajes_vacaciones') ? 'table-danger' : ''}>
   <td>Viajes y Vacaciones</td>
   <td>${calculateTotalExpenseByCategory('viajes_vacaciones')}</td>
   <td>{calculateTotalExpensePercentageByCategory('viajes_vacaciones')}%</td>
+  <td>{getMaxExpensePercentageByCategory('viajes_vacaciones')}%</td>
+
 </tr>
 <tr className={isExceededCategory('cuidado_personal') ? 'table-danger' : ''}>
   <td>Cuidado Personal</td>
   <td>${calculateTotalExpenseByCategory('cuidado_personal')}</td>
   <td>{calculateTotalExpensePercentageByCategory('cuidado_personal')}%</td>
+  <td>{getMaxExpensePercentageByCategory('cuidado_personal')}%</td>
+
 </tr>
 <tr className={isExceededCategory('donaciones_caridad') ? 'table-danger' : ''}>
   <td>Donaciones y Caridad</td>
   <td>${calculateTotalExpenseByCategory('donaciones_caridad')}</td>
   <td>{calculateTotalExpensePercentageByCategory('donaciones_caridad')}%</td>
+  <td>{getMaxExpensePercentageByCategory('donaciones_caridad')}%</td>
+
 </tr>
 <tr className={isExceededCategory('regalos_celebraciones') ? 'table-danger' : ''}>
   <td>Regalos y Celebraciones</td>
   <td>${calculateTotalExpenseByCategory('regalos_celebraciones')}</td>
   <td>{calculateTotalExpensePercentageByCategory('regalos_celebraciones')}%</td>
+  <td>{getMaxExpensePercentageByCategory('regalos_celebraciones')}%</td>
+
 </tr>
 <tr className={isExceededCategory('suscripciones_membresias') ? 'table-danger' : ''}>
   <td>Suscripciones y Membresías</td>
   <td>${calculateTotalExpenseByCategory('suscripciones_membresias')}</td>
   <td>{calculateTotalExpensePercentageByCategory('suscripciones_membresias')}%</td>
+  <td>{getMaxExpensePercentageByCategory('suscripciones_membresias')}%</td>
+
 </tr>
 <tr className={isExceededCategory('educacion') ? 'table-danger' : ''}>
   <td>Educación</td>
   <td>${calculateTotalExpenseByCategory('educacion')}</td>
   <td>{calculateTotalExpensePercentageByCategory('educacion')}%</td>
+  <td>{getMaxExpensePercentageByCategory('educacion')}%</td>
+
 </tr>
 <tr className={isExceededCategory('salud') ? 'table-danger' : ''}>
   <td>Salud</td>
   <td>${calculateTotalExpenseByCategory('salud')}</td>
   <td>{calculateTotalExpensePercentageByCategory('salud')}%</td>
+  <td>{getMaxExpensePercentageByCategory('salud')}%</td>
+
 </tr>
 <tr className={isExceededCategory('seguros') ? 'table-danger' : ''}>
   <td>Seguros</td>
   <td>${calculateTotalExpenseByCategory('seguros')}</td>
   <td>{calculateTotalExpensePercentageByCategory('seguros')}%</td>
+  <td>{getMaxExpensePercentageByCategory('seguros')}%</td>
+
 </tr>
 <tr className={isExceededCategory('ahorro') ? 'table-danger' : ''}>
   <td>Ahorro</td>
   <td>${calculateTotalExpenseByCategory('ahorro')}</td>
   <td>{calculateTotalExpensePercentageByCategory('ahorro')}%</td>
+  <td>{getMaxExpensePercentageByCategory('ahorro')}%</td>
+
 </tr>
 <tr className={isExceededCategory('inversiones') ? 'table-danger' : ''}>
   <td>Inversiones</td>
   <td>${calculateTotalExpenseByCategory('inversiones')}</td>
   <td>{calculateTotalExpensePercentageByCategory('inversiones')}%</td>
+  <td>{getMaxExpensePercentageByCategory('inversiones')}%</td>
+
 </tr>
 <tr className={isExceededCategory('deudas') ? 'table-danger' : ''}>
   <td>Deudas</td>
   <td>${calculateTotalExpenseByCategory('deudas')}</td>
   <td>{calculateTotalExpensePercentageByCategory('deudas')}%</td>
+  <td>{getMaxExpensePercentageByCategory('deudas')}%</td>
+
 </tr>
 <tr className={isExceededCategory('emergencias') ? 'table-danger' : ''}>
   <td>Emergencias</td>
   <td>${calculateTotalExpenseByCategory('emergencias')}</td>
   <td>{calculateTotalExpensePercentageByCategory('emergencias')}%</td>
+  <td>{getMaxExpensePercentageByCategory('emergencias')}%</td>
+
 </tr>
 <tr className={isExceededCategory('gastos_miscelaneos') ? 'table-danger' : ''}>
   <td>Gastos Misceláneos</td>
   <td>${calculateTotalExpenseByCategory('gastos_miscelaneos')}</td>
   <td>{calculateTotalExpensePercentageByCategory('gastos_miscelaneos')}%</td>
+  <td>{getMaxExpensePercentageByCategory('gastos_miscelaneos')}%</td>
+
 </tr>
 
             </tbody>
           </table>
         </div>
       
-
+        <div className="container mt-4">
       <div className="mb-3">
         <h2>Calificación de salud financiera</h2>
         <p>{calculateFinancialHealth()}</p>
       </div>
+    </div>
     </div>
     </div>
 );

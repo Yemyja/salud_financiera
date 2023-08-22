@@ -1,24 +1,76 @@
-import React from "react";
-// import "./Presupuesto.css";
 
-function Presupuesto() {
+
+  import React, { useState } from "react";
+  import "./Presupuesto.css"; // Importa tu archivo CSS de estilos (si es necesario)
+  import "bootstrap/dist/css/bootstrap.min.css"; // Importa el CSS de Bootstrap
+  
+  function Presupuesto() {
+    const categories = [
+      "Alimentacion",
+    "Vivienda",
+    "Transporte",
+    "Entretenimiento",
+    "Viajes_vacaciones",
+    "Cuidado_personal",
+    "Donaciones_caridad",
+    "Regalos_celebraciones",
+    "Suscripciones_membresias",
+    "Educacion",
+    "Salud",
+    "Seguros",
+    "Ahorro",
+    "Inversiones",
+    "Deudas",
+    "Emergencias",
+    "Gastos_miscelaneos",
+  ];
+    
+  
+    const [budget, setBudget] = useState({});
+    const [total, setTotal] = useState(0);
+  
+    const handleInputChange = (category, value) => {
+      const newBudget = { ...budget, [category]: parseFloat(value) || 0 };
+      setBudget(newBudget);
+  
+      const newTotal = categories.reduce((acc, cat) => acc + (newBudget[cat] || 0), 0);
+      setTotal(newTotal);
+    };
+  
     return (
-        <div className="container">
-        <h1>Contactame:</h1>
-        <p>¡Gracias por visitar mi página de portafolio! Si deseas comunicarte conmigo, aquí te proporciono diferentes formas de contacto:</p>
-        <div className="contact-info">
-          <div className="contact-info-item">
-            Correo electrónico: <a href="mailto:yemyja@gmail.com">yemyja@gmail.com</a>
-          </div>
-          <div className="contact-info-item">
-            WhatsApp: <a href="https://wa.me/525555032363">+52 5555032363</a>
-          </div>
-        </div>
-        <p>Puedes enviarme un correo electrónico o un mensaje a través de WhatsApp, y estaré encantada de responder tus consultas o discutir oportunidades laborales y colaboraciones profesionales.</p>
-        <p>En cuanto a la ubicación física, actualmente resido en México y estoy disponible tanto para trabajar de forma remota como para proyectos presenciales. Estoy abierta a explorar nuevas oportunidades y estoy dispuesta a comprometerme con el trabajo necesario para alcanzar los resultados esperados y más.</p>
-        <p>Respecto a la disponibilidad horaria, me gusta tener flexibilidad en mi tiempo para poder continuar con mi trabajo voluntario. Por lo tanto, prefiero proyectos que no sean a tiempo completo, pero eso no afectará mi dedicación y compromiso para lograr los objetivos establecidos.</p>
-        <p>¡Espero con interés escuchar de ti y explorar cómo podemos colaborar juntos!</p>
+      <div className="presupuesto-container container">
+        <h1 className="mt-4">Presupuesto Personal</h1>
+        <table className="table table-bordered mt-4">
+          <thead className="table-primary">
+            <tr>
+              <th>Categoría</th>
+              <th>Gasto Planificado</th>
+            </tr>
+          </thead>
+          <tbody>
+            {categories.map((category) => (
+              <tr key={category}>
+                <td>{category.replace(/_/g, " ")}</td>
+                <td>
+                  <input
+                    type="number"
+                    step="0.01"
+                    className="form-control"
+                    value={budget[category] || ""}
+                    onChange={(e) => handleInputChange(category, e.target.value)}
+                  />
+                </td>
+              </tr>
+            ))}
+            <tr className="total-row">
+              <td><strong>Total</strong></td>
+              <td><strong>${total.toFixed(2)}</strong></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     );
   }
-export default Presupuesto;
+  
+  export default Presupuesto;
+  
