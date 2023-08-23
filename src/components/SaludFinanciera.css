@@ -12,7 +12,8 @@ body {
   }
   
   h1 {
-    color: #007bff;
+    color: white;
+    background-color:#53585d ;
     
   }
   
@@ -38,13 +39,13 @@ body {
   }
   
   .btn-primary {
-    background-color: #1bb864;
-    border-color: #007bff;
+    background-color: #acb3ba;
+    border-color: gray;
   }
   
   .btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #b3003f;
+    background-color: #5e7084;
+    border-color: grey;
   }
   
   .mb-3 {

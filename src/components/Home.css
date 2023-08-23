@@ -29,10 +29,30 @@ p {
 
 
 .banner img {
-    width: 90%;
-    height: auto;
-    max-height: 500px; /* Ajusta la altura mínima según tu preferencia */
+    width: 100%;
+    height: 100%;
+   
     object-fit: cover; /* Ajusta el posicionamiento de la imagen para cubrir el área */
 }
 
-
+.banner {
+    position: relative; /* Establecer como elemento de posicionamiento para los elementos internos */
+    
+  }
+  
+  .banner img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .title {
+    position: absolute; /* Posicionamiento absoluto */
+    top: 3%; /* Centra verticalmente */
+    left: 15%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta el centro */
+    color: white; /* Color del texto */
+    font-size: 2.5rem; /* Tamaño del texto */
+    margin:10%;
+    color:#b8c4ce;
+   background-color:rgba(0, 0, 0, 0.1);;
+  }

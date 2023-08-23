@@ -41,22 +41,22 @@ nav ul {
 .navbar-nav .nav-link:hover {
   font-size: 18px; /* Tamaño de fuente cuando se pasa el cursor o está activo */
   color: #83efb7; /* Color de enlaces cuando se pasa el cursor o está activo */
-  background-color: #eff7c4; /* Fondo de color azul claro al pasar el cursor o está activo */
-  border-radius: 50px;
+  background-color: rgb(222, 226, 228); /* Fondo de color azul claro al pasar el cursor o está activo */
+  /* border-radius: 50px; */
 }
 
 /* Cambia el tamaño del botón y el fondo al pasar el cursor sobre él */
 .navbar-nav .nav-link:hover {
   transform: scale(1.05); /* Aumenta el tamaño del botón en un 5% */
  color: #83efb7; /* Fondo de color azul claro más claro al pasar el cursor */
- border-radius: 50px;
+ /* border-radius: 50px; */
 }
-main {
+/* main {
   margin-top: 20px; /* Ajusta el valor según el espacio deseado */
-}
+/* } */ */
 
 h1{
-  color: #1bb864;
+  color: #5e6a6e;
   font-family: 'Ubuntu', sans-serif;
 }
 .navbar-logo {
@@ -67,6 +67,7 @@ h1{
 }
 .navbar-brand{
   font-family: 'Black Ops One', cursive;
+  font-size: 2em;;
 
 
 }
@@ -76,3 +77,6 @@ h1{
   outline: none;
   cursor: pointer;
 } */
+main{
+  background-color: grey;
+}

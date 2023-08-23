@@ -39,7 +39,7 @@
 .read-more {
     display: inline-block;
     padding: 5px 10px;
-    background-color: #1bb864;
+    background-color: #5e7084;
     color: white;
     border-radius: 5px;
     text-decoration: none;
@@ -47,7 +47,7 @@
 }
 
 .read-more:hover {
-    background-color: #1bb864;
+    background-color: #5e7084;
     
 }
 
@@ -72,7 +72,7 @@
     position: absolute;
     top: 20px;
     right: 20px;
-    background-color: #1bb864;
+    background-color: #5e7084;
     border: none;
     color: #f1ebea;
     font-size: 24px;

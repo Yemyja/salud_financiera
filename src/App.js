@@ -39,7 +39,7 @@ function App() {
         {/* <nav className="navbar navbar-expand-lg navbar-light bg-light"> Aplica la clase de Bootstrap para la barra de navegación */}
           <div className="container-fluid">
           <a className="navbar-brand" href="#">
-              <img src="favicon.ico" alt="Logo MoneyMastery" className="logo navbar-logo" />
+              {/* <img src="favicon.ico" alt="Logo MoneyMastery" className="logo navbar-logo" /> */}
                 .MoneyMastery.
             </a>
           {/* <img src="favicon.ico" alt="Logo" className="logo navbar-logo" />
@@ -104,7 +104,15 @@ function App() {
         </nav>
       </header>
       <main>{renderPage()}</main>
+
+      <footer class="footer mt-auto py-3 bg-light">
+      <div class="container">
+        <span class="text-muted">Mi Proyecto © <script>document.write(new Date().getFullYear())</script> </span>
+      </div>
+    </footer>
     </div>
+
+    
   );
 }
 

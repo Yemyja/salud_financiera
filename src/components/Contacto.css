@@ -75,7 +75,7 @@
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: #1bb864;
+    background-color: #acb3ba;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -83,6 +83,6 @@
   }
   
   .contact-form button:hover {
-    background-color: #0056b3;
+    background-color: #5e7084;
   }
   
