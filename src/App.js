@@ -84,20 +84,21 @@ function App() {
                 </li>
                 <li className="nav-item">
                   <button
-                    className={`nav-link ${currentPage === "contacto" && "active"}`}
-                    onClick={() => handlePageChange("contacto")}
-                  >
-                   Contacto
-                  </button>
-                </li>
-                <li className="nav-item">
-                  <button
                     className={`nav-link ${currentPage === "blog" && "active"}`}
                     onClick={() => handlePageChange("blog")}
                   >
                     Blog
                   </button>
                 </li>
+                <li className="nav-item">
+                  <button
+                    className={`nav-link ${currentPage === "contacto" && "active"}`}
+                    onClick={() => handlePageChange("contacto")}
+                  >
+                   Contacto
+                  </button>
+                </li>
+                
               </ul>
             </div>
           </div>

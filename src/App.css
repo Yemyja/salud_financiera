@@ -63,11 +63,14 @@ h1{
   max-height: 30px; /* Ajusta el valor según tu preferencia */
   margin-left:5%;
   font-family: 'Black Ops One', cursive;
+ 
 
 }
 .navbar-brand{
   font-family: 'Black Ops One', cursive;
-  font-size: 2em;;
+  font-size: 2em;
+  color: grey;
+ 
 
 
 }
@@ -77,6 +80,13 @@ h1{
   outline: none;
   cursor: pointer;
 } */
-main{
-  background-color: grey;
+body{
+  background-color: #f0f0f0; /* Color de fondo más claro */
+    background-image: linear-gradient(to bottom, #f0f0f0, #9e9999); /* Degradado de grises */
+  
+}
+footer{
+  background-color: #f0f0f0; /* Color de fondo más claro */
+  background-image: linear-gradient(to bottom,  #9e9999,#f0f0f0); /* Degradado de grises */
+
 }

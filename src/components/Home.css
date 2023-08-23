@@ -8,11 +8,6 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-    color: #333333;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
 
 p {
     color: #555;
@@ -46,15 +41,19 @@ p {
   }
   
   .title {
+    display:flex;
     position: absolute; /* Posicionamiento absoluto */
-    top: 3%; /* Centra verticalmente */
-    left: 15%; /* Centra horizontalmente */
+    top: .5%; /* Centra verticalmente */
+    left: 10%; /* Centra horizontalmente */
     transform: translate(-50%, -50%); /* Ajusta el centro */
     color: white; /* Color del texto */
-    font-size: 2.5rem; /* Tamaño del texto */
+    font-size: 3rem; /* Tamaño del texto */
     margin:10%;
-    color:#b8c4ce;
-   background-color:rgba(0, 0, 0, 0.1);;
+    color:#cbd5e7;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+  
+  
   }
 
   .recuadros-container {
@@ -83,4 +82,9 @@ p {
    
     margin-bottom: 10px;
   }
-  
+  h1 {
+    color: #f4dede;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    background-color: rgba(229, 229, 230, 0.2); 
+}

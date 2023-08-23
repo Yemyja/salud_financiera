@@ -71,7 +71,7 @@ function Home() {
     <div className="home-container">
       <div className="banner">
         <img src="principal.jpeg" alt="Banner" />
-        <h1 className="title">Tu camino hacia la salud financiera</h1>
+        <span className="title">Tu camino hacia <br></br> la salud financiera</span>
       </div>
 
       <div className="recuadros-container">
