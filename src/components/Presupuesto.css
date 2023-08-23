@@ -1,0 +1,11 @@
+.table-primary{
+    background-color:#eff7c4 ;
+    color: white; /* Cambiar el color del texto si es necesario */
+  }
+  th ,.total-row{
+    font-size: 1.3em;
+    
+  }
+
+
+  

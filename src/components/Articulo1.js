@@ -5,9 +5,9 @@ import React from "react";
 function Articulo1() {
     return (
         <div>
-            <h1>5 Pasos para Establecer un Presupuesto Efectivo</h1>
+            <h1 >5 Pasos para Establecer un Presupuesto Efectivo</h1>
             <p>
-                {/* Contenido completo del artículo */}
+               
             </p>
         </div>
     );

@@ -27,9 +27,6 @@ function App() {
         return <SaludFinanciera />;
         case "contacto":
           return <Contacto />;
-
-          case "articulo1":
-            return<Articulo1 />
       default:
         return <Home />;
     }
@@ -38,8 +35,15 @@ function App() {
   return (
     <div>
       <header>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light"> {/* Aplica la clase de Bootstrap para la barra de navegación */}
+      <nav className="navbar navbar-expand navbar-light bg-light">
+        {/* <nav className="navbar navbar-expand-lg navbar-light bg-light"> Aplica la clase de Bootstrap para la barra de navegación */}
           <div className="container-fluid">
+          <a className="navbar-brand" href="#">
+              <img src="favicon.ico" alt="Logo MoneyMastery" className="logo navbar-logo" />
+                .MoneyMastery.
+            </a>
+          {/* <img src="favicon.ico" alt="Logo" className="logo navbar-logo" />
+          MoneyMastery */}
             <a className="navbar-brand" href="#"></a>
             <button
               className="navbar-toggler"

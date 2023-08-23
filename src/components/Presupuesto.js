@@ -41,7 +41,7 @@
       <div className="presupuesto-container container">
         <h1 className="mt-4">Presupuesto Personal</h1>
         <table className="table table-bordered mt-4">
-          <thead className="table-primary">
+          <thead style={{ backgroundColor: '#eff7c4', color: '#eff7c4' }}>
             <tr>
               <th>Categoría</th>
               <th>Gasto Planificado</th>
