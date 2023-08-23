@@ -56,3 +56,31 @@ p {
     color:#b8c4ce;
    background-color:rgba(0, 0, 0, 0.1);;
   }
+
+  .recuadros-container {
+    display: flex;
+    /* justify-content: space-around; */
+    align-items: center;
+    padding: 8px;
+    background-color: #f5f5f5;
+        justify-content: space-between; /* Distribuye los elementos equitativamente */
+        width: 100%; /* Ocupa todo el ancho disponible */
+     
+  }
+  
+  .recuadro {
+    text-align: center;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+
+  width: 100%; /* Ocupa todo el ancho disponible */
+
+  }
+  
+  .recuadro img {
+ 
+   
+    margin-bottom: 10px;
+  }
+  
