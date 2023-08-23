@@ -107,7 +107,8 @@ function App() {
 
       <footer class="footer mt-auto py-3 bg-light">
       <div class="container">
-        <span class="text-muted">Mi Proyecto © <script>document.write(new Date().getFullYear())</script> </span>
+        <span class="text-muted">© 2023 MoneyMastery. Todos los derechos reservados.
+<script>document.write(new Date().getFullYear())</script> </span>
       </div>
     </footer>
     </div>
