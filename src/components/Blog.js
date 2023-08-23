@@ -22,7 +22,7 @@ function Blog() {
             Luego, realiza un seguimiento regular de tus gastos y ajusta tu presupuesto según sea necesario. Utiliza herramientas como aplicaciones de presupuesto o hojas de cálculo para registrar tus gastos diarios y compararlos con tus categorías presupuestadas. Si notas que te estás excediendo en una categoría, busca formas de recortar gastos en otras áreas para mantener el equilibrio.
     
             Finalmente, mantén la disciplina y la consistencia en tu enfoque presupuestario. Revisa tu presupuesto regularmente, realiza ajustes según tus necesidades cambiantes y celebra tus logros financieros a medida que alcances tus metas. La clave para un presupuesto efectivo es la perseverancia y la adaptabilidad a medida que avanzas en tu viaje hacia la estabilidad financiera.
-        `
+        `, image:"/images/home2.jpeg",
         },
         {
             title: <strong>"Inversiones para Principiantes: Diversificación y Riesgo"</strong> ,
@@ -40,7 +40,7 @@ function Blog() {
             En resumen, la diversificación es una estrategia esencial para mitigar el riesgo y construir una cartera de inversiones sólida. Comprende los principios básicos de inversión, evalúa el riesgo de manera informada y busca oportunidades de crecimiento a largo plazo. Con una planificación cuidadosa y conocimiento financiero, puedes tomar pasos hacia un futuro financiero más seguro y exitoso.
         `
         ,
-        image:"/images/home2.jpeg",
+        image:"/images/blog3.jpeg",
     },
         {
             title:<strong> "Planificación Financiera para el Retiro: ¿Estás Preparado?"</strong> ,
@@ -56,7 +56,7 @@ function Blog() {
             Es fundamental evaluar tus gastos y crear un presupuesto realista para la jubilación. Esto te ayudará a estimar cuánto necesitarás para vivir cómodamente y cuánto debes ahorrar para alcanzar ese objetivo. Considera factores como los gastos de vivienda, la atención médica y el entretenimiento en tu planificación.
 
             En resumen, la planificación financiera para el retiro es esencial para disfrutar de una vida cómoda y sin preocupaciones en tus años dorados. Comienza a planificar temprano, diversifica tus inversiones y aprovecha las opciones de ahorro con ventajas fiscales. Con una planificación cuidadosa, puedes asegurarte de tener un futuro económico seguro y cómodo durante tu jubilación.
-        `
+        `, image:"/images/blog2.jpeg",
             }
     ];
 
@@ -85,12 +85,15 @@ function Blog() {
                     ) : (
                         <p>{article.content.substring(0, 150)}...</p>
                     )}
+                    <div className="center-content">
                     <button className="read-more" onClick={() => handleReadMore(index)}>
                         {expandedArticleIndex === index ? "Leer menos" : "Leer más"}
                     </button>
+                    </div>
                     <br></br>
 
-                    <img src={article.image} alt={article.title} />
+                    <div class="image-container">
+    <img class="resizable-image"src={article.image} alt={article.title} /></div>
                 </article>
             ))}
         </div>

@@ -6,6 +6,7 @@
     justify-content: space-between;
     gap: 20px;
     padding: 40px;
+    border: 1px solid gray;
 }
 
 .blog-post {
@@ -16,6 +17,10 @@
     box-shadow: 0px 0px 10px rgba(244, 240, 240, 0.1);
     margin-bottom: 20px;
     transition: height 0.3s ease;
+   
+    border: 1px solid gray;
+    
+    
 
 }
 
@@ -43,6 +48,7 @@
 
 .read-more:hover {
     background-color: #1bb864;
+    
 }
 
 /* Additional styles can be added here */
@@ -72,3 +78,25 @@
     font-size: 24px;
     cursor: pointer;
 }
+
+.image-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 300px; /* Set the desired container width */
+    height: 200px; /* Set the desired container height */
+  
+    margin:auto;
+  }
+
+  .resizable-image {
+    max-width: 100%; /* The image will not exceed the width of the container */
+    max-height: 100%; /* The image will not exceed the height of the container */
+  }
+
+  .center-content {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+   
+  }
