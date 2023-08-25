@@ -134,21 +134,23 @@
 
 
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./Home";
-import Presupuesto from "./Presupuesto";
-import SaludFinanciera from "./SaludFinanciera";
-import Blog from "./Blog";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./components/Home";
+import Presupuesto from "./components/Presupuesto";
+import SaludFinanciera from "./components/SaludFinanciera";
+import Blog from "./components/Blog";
 
 function App() {
- return (
- <Switch>
-<Route path="/Presupuesto" component={Presupuesto} />
- <Route path="/Blog" component={Blog} />
- </Switch>
- </Router>
-);
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Presupuesto" element={<Presupuesto />} />
+        <Route path="/SaludFinanciera" element={<SaludFinanciera />} />
+        <Route path="/Blog" element={<Blog />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;
-

@@ -98,32 +98,9 @@ function Home() {
       
     </div>
 
-{/* ______________ */}
 
-      {/* <div className="recuadros-container">
-        <div className="recuadro">
-          <a href="/Presupuesto.js">
-            <img src="home4.jpeg" alt="Presupuesto" />
-            <p><strong>Herramienta de Presupuesto:</strong> Permite escribir un plan financiero detallado para controlar gastos.</p>
-          </a>
-        </div>
-        <div className="recuadro">
-          <a href="/Saludfinanciera">
-            <img src="home5.jpeg" alt="Salud Financiera" />
-            <p><strong>Análisis de Gastos:</strong> Categoriza y evalúa los gastos diarios para garantizar salud financiera.</p>
-          </a>
-        </div>
-        <div className="recuadro">
-          <a href="/Blog">
-            <img src="home6.jpeg" alt="Blog" />
-            <p>Explora <strong>artículos </strong>financieros destacados para fortalecer tu salud económica.</p>
-          </a>
-         
-        </div>
-      </div>
 
-      
-    </div> */}
+    
   );
 }
 
