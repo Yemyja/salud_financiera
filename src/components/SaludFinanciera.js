@@ -85,7 +85,7 @@ const App = () => {
 
 const handleIncomeSubmit = () => {
     setIncomes([...incomes, { amount: incomeAmount, date: incomeDate, source: incomeSource }]);
-    setIncomeAmount(0);
+    setIncomeAmount('');
     setIncomeDate('');
     setIncomeSource('');
   };
@@ -195,6 +195,26 @@ const deleteIncome = (index) => {
 };
 
   
+// const App = () => {
+//   // ...
+
+  // Load expenses and incomes from Local Storage on component mount
+  useEffect(() => {
+    const storedExpenses = JSON.parse(localStorage.getItem("expenses")) || [];
+    const storedIncomes = JSON.parse(localStorage.getItem("incomes")) || [];
+
+    setExpenses(storedExpenses);
+    setIncomes(storedIncomes);
+  }, []);
+
+  // Save expenses and incomes to Local Storage whenever they change
+  useEffect(() => {
+    localStorage.setItem("expenses", JSON.stringify(expenses));
+  }, [expenses]);
+
+  useEffect(() => {
+    localStorage.setItem("incomes", JSON.stringify(incomes));
+  }, [incomes]);
   
 return (
     <div>
@@ -229,7 +249,7 @@ return (
                 <input
                   type="number"
                   className="form-control"
-                  value={incomeAmount}
+                  value={isNaN(incomeAmount) ? '' : incomeAmount}
                   onChange={(e) => setIncomeAmount(parseFloat(e.target.value))}
                   placeholder="Monto del ingreso"
                 />

@@ -61,6 +61,7 @@
 //_____________________
 import React, { useState } from "react";
 
+import { Link } from "react-router-dom"; // Import Link from React Router
 import "bootstrap/dist/css/bootstrap.min.css"; // Importa el CSS de Bootstrap
 
 import "./Home.css";
@@ -74,7 +75,33 @@ function Home() {
         <span className="title">Tu camino hacia <br></br> la salud financiera</span>
       </div>
 
-      <div className="recuadros-container">
+       <div className="recuadros-container">
+ <div className="recuadro">
+ <Link to="/Presupuesto">
+<img src="home4.jpeg" alt="Presupuesto" />
+ <p><strong>Herramienta de Presupuesto:</strong> Permite escribir un plan financiero detallado para controlar gastos.</p>
+ </Link>
+</div>
+<div className="recuadro">
+<Link to="/Saludfinanciera">
+  <img src="home5.jpeg" alt="Salud Financiera" />
+ <p><strong>Análisis de Gastos:</strong> Categoriza y evalúa los gastos diarios para garantizar salud financiera.</p>
+ </Link>
+ </div>
+ <div className="recuadro">
+  <Link to="/Blog">
+ <img src="home6.jpeg" alt="Blog" />
+ <p>Explora <strong>artículos </strong>financieros destacados para fortalecer tu salud económica.</p>
+ </Link>    
+        </div>
+      </div>
+
+      
+    </div>
+
+{/* ______________ */}
+
+      {/* <div className="recuadros-container">
         <div className="recuadro">
           <a href="/Presupuesto.js">
             <img src="home4.jpeg" alt="Presupuesto" />
@@ -97,7 +124,7 @@ function Home() {
       </div>
 
       
-    </div>
+    </div> */}
   );
 }
 
