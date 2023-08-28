@@ -40,6 +40,7 @@
     return (
       <div className="presupuesto-container container">
         <h1 className="mt-4">Presupuesto Personal</h1>
+        <p>Un presupuesto es una herramienta esencial para tomar el control de tus finanzas. Al crear un presupuesto, planificas cómo distribuir tus ingresos en gastos, ahorros e inversiones. Esto te permite visualizar tus metas financieras y tomar decisiones informadas. Un presupuesto bien elaborado te empodera para manejar tus gastos de manera eficiente, ahorrar para el futuro y mantener un equilibrio saludable en tus finanzas personales.</p>
         <table className="table table-bordered mt-4">
           <thead style={{ backgroundColor: '#eff7c4', color: '#eff7c4' }}>
             <tr>

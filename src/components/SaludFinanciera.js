@@ -221,6 +221,7 @@ return (
 
     <div className="container mt-4">
     <h1 className="text-center">Verificar Salud Financiera</h1>
+    <p>Evaluar tu salud financiera es clave para un futuro sólido. En nuestra herramienta, al ingresar tus ingresos y datos, obtendrás una calificación financiera. Las áreas en rojo señalan desafíos: identifica lo que debes ajustar para fortalecer tus finanzas y tomar decisiones más acertadas.</p>
        <div className="container mt-4">
          
          <div className="mb-3">
