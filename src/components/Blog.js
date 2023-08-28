@@ -4,7 +4,6 @@
 import React, { useState } from "react";
 import "./Blog.css";
 import { Link } from "react-router-dom";
-import bannerImage from "../assets/images/home1.webp";
 
 function Blog() {
     const articles = [

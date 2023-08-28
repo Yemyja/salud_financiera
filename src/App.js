@@ -6,7 +6,6 @@ import Contacto from "./components/Contacto";
 import SaludFinanciera from "./components/SaludFinanciera";
 import "bootstrap/dist/css/bootstrap.min.css"; // Importa el CSS de Bootstrap
 import "./App.css";
-import Articulo1 from "./components/Articulo1"; 
 
 
 function App() {
@@ -39,13 +38,10 @@ function App() {
       <nav className="navbar navbar-expand navbar-light bg-light">
         {/* <nav className="navbar navbar-expand-lg navbar-light bg-light"> Aplica la clase de Bootstrap para la barra de navegación */}
           <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-              {/* <img src="favicon.ico" alt="Logo MoneyMastery" className="logo navbar-logo" /> */}
+          <a className="navbar-brand" href="/Home">
                 .MoneyMastery.
             </a>
-          {/* <img src="favicon.ico" alt="Logo" className="logo navbar-logo" />
-          MoneyMastery */}
-            <a className="navbar-brand" href="#"></a>
+            <a className="navbar-brand" href="/Home"></a>
             <button
               className="navbar-toggler"
               type="button"
