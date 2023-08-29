@@ -1,10 +1,19 @@
 
 
-  import React, { useState } from "react";
+  import React, { useState, useEffect } from "react";
+
+
   import "./Presupuesto.css"; // Importa tu archivo CSS de estilos (si es necesario)
   import "bootstrap/dist/css/bootstrap.min.css"; // Importa el CSS de Bootstrap
   
   function Presupuesto() {
+
+    useEffect(() => {
+      // Scroll hasta la parte superior cuando el componente se monta
+      window.scrollTo(0, 0);
+    }, []);
+  
+
     const categories = [
       "Alimentacion",
     "Vivienda",
