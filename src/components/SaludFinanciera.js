@@ -95,6 +95,8 @@ const App = () => {
     const updatedExpenses = [...expenses];
     updatedExpenses.splice(index, 1);
     setExpenses(updatedExpenses);
+    localStorage.setItem("expenses", JSON.stringify(updatedExpenses));
+
   };
 
 
@@ -215,6 +217,7 @@ const deleteIncome = (index) => {
   const updatedIncomes = [...incomes];
   updatedIncomes.splice(index, 1);
   setIncomes(updatedIncomes);
+  localStorage.setItem("incomes", JSON.stringify(updatedIncomes));
 };
 
   
@@ -305,10 +308,14 @@ return (
                   <td>{income.source}</td>
                   <td>
                    
-                   <button
-                      className="btn btn-danger"
-                      onClick={() => deleteIncome(index)}
-                    >
+                  <button
+          className="btn btn-danger"
+          onClick={() => {
+            deleteIncome(index); // Primero, elimina el ingreso
+            const updatedIncomes = [...incomes];
+            updatedIncomes.splice(index, 1);
+            localStorage.setItem("incomes", JSON.stringify(updatedIncomes)); // Luego, actualiza el almacenamiento local
+          }} >
                       Borrar
                     </button>
                   </td>
@@ -415,9 +422,14 @@ return (
                     <td>{expense.category}</td>
                     <td>{expense.date}</td>
                     <td>
-                      <button
-                        className="btn btn-danger"
-                        onClick={() => deleteExpense(index)}
+                    <button
+          className="btn btn-danger"
+          onClick={() => {
+            deleteExpense(index); // Primero, elimina el gasto
+            const updatedExpenses = [...expenses];
+            updatedExpenses.splice(index, 1);
+            localStorage.setItem("expenses", JSON.stringify(updatedExpenses)); // Luego, actualiza el almacenamiento local
+          }}
                       >
                         Borrar
                       </button>
