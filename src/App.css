@@ -51,9 +51,6 @@ nav ul {
  color: #83efb7; /* Fondo de color azul claro más claro al pasar el cursor */
  /* border-radius: 50px; */
 }
-/* main {
-  margin-top: 20px; /* Ajusta el valor según el espacio deseado */
-/* } */ */
 
 h1{
   color: white;
@@ -74,12 +71,7 @@ h1{
 
 
 }
-/* .collapsed-btn {
-  background-color: transparent;
-  border: none;
-  outline: none;
-  cursor: pointer;
-} */
+
 body{
   background-color: #f0f0f0; /* Color de fondo más claro */
     background-image: linear-gradient(to bottom, #f0f0f0, #9e9999); /* Degradado de grises */
