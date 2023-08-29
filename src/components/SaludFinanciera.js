@@ -4,7 +4,7 @@ import "./SaludFinanciera.css";
 import "bootstrap/dist/css/bootstrap.min.css"; 
 
 
-
+// Definición de porcentajes máximos para cada categoría de gasto
 const useMaxExpensePercentage = () => {
   const [maxExpensePercentage, setMaxExpensePercentage] = useState({
     alimentacion: 15,
@@ -26,10 +26,14 @@ const useMaxExpensePercentage = () => {
     gastos_miscelaneos: 10,
   });
 
+
+  // Función para obtener el porcentaje máximo de gasto por categoría
   const getMaxExpensePercentageByCategory = (category) => {
     return maxExpensePercentage[category] || 0;
   };
 
+  
+  // Función para actualizar el porcentaje máximo de gasto por categoría
   const updateMaxExpensePercentage = (category, value) => {
     const parsedValue = parseFloat(value);
     if (!isNaN(parsedValue) && parsedValue >= 0) {
@@ -44,6 +48,7 @@ const useMaxExpensePercentage = () => {
 
 
 const App = () => {
+   // Estados para rastrear ingresos y gastos
   const [expenses, setExpenses] = useState([]);
   const [incomes, setIncomes] = useState([]);
   const [incomeAmount, setIncomeAmount] = useState('');
@@ -54,7 +59,7 @@ const App = () => {
 
 
 
-  // Load incomes and expenses from localStorage
+  //Carga de ingresos y gastos desde el almacenamiento local al cargar la aplicación
   useEffect(() => {
     const storedIncomes = localStorage.getItem("incomes");
     const storedExpenses = localStorage.getItem("expenses");
@@ -75,7 +80,7 @@ const App = () => {
 
 
 
-
+// Uso del hook useMaxExpensePercentage para obtener funciones relacionadas con los porcentajes máximos de gasto
     const { getMaxExpensePercentageByCategory, } = useMaxExpensePercentage();
 
     useEffect(() => {
