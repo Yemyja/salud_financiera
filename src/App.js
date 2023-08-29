@@ -21,7 +21,7 @@ function App() {
             <a className="navbar-brand" href="/">
               .MoneyMastery.
             </a>
-            <a className="navbar-brand" href="/">Home</a>
+            <a className="navbar-brand" href="/"></a>
             <button
               className="navbar-toggler"
               type="button"
