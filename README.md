@@ -59,3 +59,18 @@ Se utiliza el hook personalizado useMaxExpensePercentage para obtener las funcio
 Se definen funciones para manejar ingresos y gastos, calcular totales, determinar si se exceden los porcentajes máximos, calcular la salud financiera, etc.
 Se renderiza la interfaz de usuario de la aplicación, mostrando información sobre ingresos, gastos, resúmenes y más.
 En resumen, este código crea una aplicación que permite a los usuarios rastrear sus ingresos y gastos, calcular porcentajes y evaluar su salud financiera. Utiliza el estado, efectos y funciones para proporcionar funcionalidad y renderizar la interfaz de usuario.
+
+blog.js
+
+ Este componente representa una lista de artículos de blog con títulos, contenido y una imagen asociada. Aquí está el código explicado en detalle:
+ Este componente Blog mapea el array articles y renderiza cada artículo con su título, contenido y una imagen. Permite a los usuarios expandir o contraer el contenido de cada artículo haciendo clic en el botón "Leer más" o "Leer menos". La imagen asociada a cada artículo también se muestra junto con el contenido. El estado expandedArticleIndex se utiliza para realizar un seguimiento del artículo que se ha expandido.
+
+contact.js
+
+Este componente representa una página de contacto que contiene un mensaje de introducción, una imagen, y un formulario para enviar mensajes. Aquí están los principales puntos:
+
+Se utiliza el estado messageSent para controlar si se ha enviado un mensaje a través del formulario. Inicialmente, está configurado en false.
+La función handleMessageSubmit se ejecuta cuando se envía el formulario. En este caso, no se implementa la lógica real para enviar el mensaje, pero al final de la función, se actualiza el estado messageSent a true.
+La renderización condicional se basa en el valor de messageSent. Si es true, se muestra un mensaje de confirmación de que el mensaje ha sido enviado. Si es false, se muestra el formulario de contacto.
+El componente también incluye etiquetas HTML para capturar el nombre, correo electrónico y el mensaje del usuario. Cuando el usuario completa el formulario y hace clic en "Enviar Mensaje", la función handleMessageSubmit se ejecuta.
+La imagen de contacto se carga utilizando la ruta importada desde contactImage.

@@ -3,9 +3,9 @@
 
 import React, { useState } from "react";
 import "./Blog.css";
-import { Link } from "react-router-dom";
 
 function Blog() {
+    // Array de objetos que contiene los artículos del blog
     const articles = [
         {
             title:<strong> "5 Pasos para Establecer un Presupuesto Efectivo"</strong>,
@@ -59,8 +59,10 @@ function Blog() {
             }
     ];
 
+    // Estado para realizar un seguimiento del índice del artículo expandido
     const [expandedArticleIndex, setExpandedArticleIndex] = useState(null);
 
+    // Función para manejar el clic en "Leer más" o "Leer menos"
     const handleReadMore = (index) => {
         if (expandedArticleIndex === index) {
             setExpandedArticleIndex(null); // Cerrar el artículo expandido

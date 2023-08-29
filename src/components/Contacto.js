@@ -3,8 +3,10 @@ import "./Contacto.css"; // Importa tu archivo CSS de estilos
 import contactImage from "../assets/images/contacto.jpeg"; 
 
 const Contacto = () => {
+  // Estado para rastrear si un mensaje ha sido enviado
   const [messageSent, setMessageSent] = useState(false);
 
+  // Función para manejar el envío del mensaje
   const handleMessageSubmit = (e) => {
     e.preventDefault();
     // Aquí iría la lógica para enviar el mensaje

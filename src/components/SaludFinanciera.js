@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 
 const useMaxExpensePercentage = () => {
+  // Definición de porcentajes máximos para cada categoría de gasto
   const [maxExpensePercentage, setMaxExpensePercentage] = useState({
     alimentacion: 15,
     vivienda: 35,
@@ -28,10 +29,12 @@ const useMaxExpensePercentage = () => {
   });
 
   const getMaxExpensePercentageByCategory = (category) => {
+  // Función para obtener el porcentaje máximo de gasto por categoría
     return maxExpensePercentage[category] || 0;
   };
 
   const updateMaxExpensePercentage = (category, value) => {
+  // Función para actualizar el porcentaje máximo de gasto por categoría no se uso
     const parsedValue = parseFloat(value);
     if (!isNaN(parsedValue) && parsedValue >= 0) {
       setMaxExpensePercentage({
@@ -45,6 +48,7 @@ const useMaxExpensePercentage = () => {
 
 
 const App = () => {
+  // Estados para rastrear ingresos y gastos
   const [expenses, setExpenses] = useState([]);
   const [incomes, setIncomes] = useState([]);
   const [incomeAmount, setIncomeAmount] = useState('');
@@ -57,6 +61,7 @@ const App = () => {
 
   // Load incomes and expenses from localStorage
   useEffect(() => {
+    // Carga de ingresos y gastos desde el almacenamiento local al cargar la aplicación
     const storedIncomes = localStorage.getItem("incomes");
     const storedExpenses = localStorage.getItem("expenses");
 
@@ -78,7 +83,7 @@ const App = () => {
 
 
     const { getMaxExpensePercentageByCategory, } = useMaxExpensePercentage();
-
+// Uso del hook useMaxExpensePercentage para obtener funciones relacionadas con los porcentajes máximos de gasto
     useEffect(() => {
 
       const currentDate = new Date();
