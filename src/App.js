@@ -8,7 +8,7 @@ import SaludFinanciera from "./components/SaludFinanciera";
 import Blog from "./components/Blog";
 import Contacto from "./components/Contacto";
 import "bootstrap/dist/css/bootstrap.min.css"; 
-// Importa el CSS de Bootstrap
+// Importa el CSS de Bootstrap //
 import "./App.css";
 
 
